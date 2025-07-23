@@ -4,12 +4,6 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["cle1", "iad1", "hnd1"],
-  "functions": {
-    "app/**/*.tsx": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",

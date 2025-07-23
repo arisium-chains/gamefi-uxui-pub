@@ -51,6 +51,7 @@
    - Build Command: `npm run build` (default)
    - Output Directory: `.next` (default)
    - Install Command: `npm install` (default)
+   - Region: **Automatic** (single region on free tier)
 
 3. **Environment Variables**
    ```
