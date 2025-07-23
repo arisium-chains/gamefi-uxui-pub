@@ -87,6 +87,7 @@
 - **Bundle Optimization** - Tree-shaking and package optimization
 - **Static Optimization** - Automatic static page generation
 - **Health Check** - `/api/health` endpoint for monitoring
+- **Free Tier Compatible** - No Pro/Enterprise features required
 
 ### 📦 Build Output
 
