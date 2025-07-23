@@ -23,33 +23,34 @@ export default function Dashboard() {
       <div className="mobile-page">
         {racers.length === 0 ? (
           // Empty state - matches Figma design
-          <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-            <div className="race-track-container mb-6">
+          <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
+            <div className="race-track-container mb-8">
               <div className="w-full h-full flex items-center justify-center">
-                <div className="text-6xl">🏁</div>
+                <div className="text-8xl animate-bounce">🏁</div>
               </div>
             </div>
             
-            <div className="mobile-title">No Wacky Racers yet! Let&apos;s get you started.</div>
+            <h2 className="text-2xl font-bold mb-4">No Wacky Racers yet!</h2>
+            <p className="text-muted-foreground mb-8 max-w-sm">Let&apos;s get you started.</p>
             
-            <Link href="/adopt" className="btn-figma-primary max-w-sm">
+            <Link href="/adopt" className="btn-figma-primary">
               Adopt Your First Racer!
             </Link>
           </div>
         ) : (
           // Dashboard with racers
-          <div className="space-y-6">
+          <div className="space-y-8 pb-4">
             {/* Rewards Section */}
             {pendingRewards > 0 && (
               <div className="mobile-card">
-                <h2 className="mobile-section-title">Rewards</h2>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <span className="text-lg">🎁</span>
+                <h2 className="text-xl font-bold mb-4">Rewards</h2>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <span className="text-xl">🎁</span>
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Available Rewards</div>
-                    <div className="font-semibold">{pendingRewards} WLD</div>
+                    <div className="text-lg font-semibold">{pendingRewards} WLD</div>
                   </div>
                 </div>
                 <button
@@ -71,8 +72,8 @@ export default function Dashboard() {
 
             {/* My Racers Section */}
             <div>
-              <h2 className="mobile-section-title">My Racers</h2>
-              <div className="space-y-3">
+              <h2 className="text-xl font-bold mb-6">My Racers</h2>
+              <div className="space-y-4">
                 {racers.map((racer) => (
                   <Link key={racer.id} href={`/racer/${racer.id}`}>
                     <div className="racer-card-mobile">
@@ -94,7 +95,7 @@ export default function Dashboard() {
             </div>
 
             {/* Quick Actions */}
-            <div className="space-y-3">
+            <div className="pt-4">
               <Link href="/adopt" className="btn-figma-primary block text-center">
                 Adopt New Racer
               </Link>

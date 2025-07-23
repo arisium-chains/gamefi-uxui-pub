@@ -484,10 +484,12 @@ a {
 .mobile-page {
   flex: 1;
   padding: 1rem;
-  padding-bottom: 5rem; /* Space for bottom nav */
+  padding-bottom: 6rem; /* Space for bottom nav */
   max-width: 480px;
   margin: 0 auto;
   width: 100%;
+  min-height: calc(100vh - 120px); /* Ensure proper height */
+  overflow-y: auto;
 }
 
 /* Mobile Header */
@@ -495,12 +497,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   background-color: var(--background);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 10;
+  min-height: 60px;
+  flex-shrink: 0;
 }
 
 /* Purple Gradient Button (Figma Style) */
@@ -535,9 +539,11 @@ a {
   background-color: var(--card);
   border-radius: 1rem;
   padding: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mobile-card:hover {
@@ -549,16 +555,18 @@ a {
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--card);
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-around;
-  padding: 0.75rem 0;
+  padding: 1rem 0;
   z-index: 50;
+  width: 100%;
   max-width: 480px;
-  margin: 0 auto;
+  margin: 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .bottom-nav-item {
@@ -619,13 +627,15 @@ a {
 .racer-card-mobile {
   background-color: var(--card);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .racer-card-mobile:hover {
@@ -660,19 +670,28 @@ a {
 /* Race History Item (Figma Style) */
 .race-item {
   background-color: var(--card);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.race-item:hover {
+  border-color: var(--primary);
+  background-color: rgba(139, 92, 246, 0.03);
+  transform: translateY(-1px);
 }
 
 .race-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 0.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
   background-color: var(--primary);
   display: flex;
   align-items: center;
@@ -698,15 +717,19 @@ a {
 /* Settings Item (Figma Style) */
 .settings-item {
   background-color: var(--card);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
 }
 
 .settings-item:hover {
@@ -715,9 +738,9 @@ a {
 }
 
 .settings-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 0.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
   background-color: var(--muted);
   display: flex;
   align-items: center;
