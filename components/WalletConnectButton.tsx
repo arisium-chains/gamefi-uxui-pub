@@ -42,26 +42,19 @@ export default function WalletConnectButton() {
   }
 
   return (
-    <Button
+    <button
       onClick={connectWallet}
       disabled={isLoading}
-      size="lg"
-      className="w-full text-lg py-6 px-8 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-black font-bold shadow-2xl relative overflow-hidden group border-0"
+      className="btn-figma-primary"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-      <div className="relative flex items-center justify-center gap-3">
-        {isLoading ? (
-          <>
-            <LoadingSpinner size="sm" color="black" />
-            <span>Connecting Wallet...</span>
-          </>
-        ) : (
-          <>
-            <span className="text-2xl">🔗</span>
-            <span>Connect Wallet</span>
-          </>
-        )}
-      </div>
-    </Button>
+      {isLoading ? (
+        <div className="flex items-center justify-center gap-2">
+          <LoadingSpinner size="sm" color="white" />
+          <span>Connecting Wallet...</span>
+        </div>
+      ) : (
+        'Connect Wallet'
+      )}
+    </button>
   );
 }
