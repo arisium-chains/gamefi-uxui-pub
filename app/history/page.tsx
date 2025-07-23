@@ -38,17 +38,17 @@ export default function HistoryPage() {
 
       <div className="mobile-page">
         {/* Filter Tabs */}
-        <div className="flex gap-3 mb-8 overflow-x-auto pb-2" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
-          <button className="px-6 py-3 bg-card border border-border rounded-full text-sm font-medium whitespace-nowrap flex-shrink-0 transition-all">
+        <div className="filter-tabs-container">
+          <button className="filter-tab">
             All Races
           </button>
-          <button className="px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-medium whitespace-nowrap flex-shrink-0 transition-all">
+          <button className="filter-tab active">
             My Racers Only
           </button>
-          <button className="px-6 py-3 bg-card border border-border rounded-full text-sm font-medium whitespace-nowrap flex-shrink-0 transition-all">
+          <button className="filter-tab">
             Winners
           </button>
-          <button className="px-6 py-3 bg-card border border-border rounded-full text-sm font-medium whitespace-nowrap flex-shrink-0 transition-all">
+          <button className="filter-tab">
             Top 3
           </button>
         </div>
@@ -56,17 +56,19 @@ export default function HistoryPage() {
         {/* Race History List */}
         <div className="flex-1">
           {raceHistory.length === 0 ? (
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
-              <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mb-8 border border-blue-500/30">
-                <Trophy className="w-10 h-10 text-blue-400" />
+            <div className="flex flex-col items-center justify-center min-h-[55vh] text-center px-4">
+              <div className="w-24 h-24 bg-blue-500/20 rounded-full flex items-center justify-center mb-8 border border-blue-500/30">
+                <Trophy className="w-12 h-12 text-blue-400" />
               </div>
-              <h2 className="text-2xl font-bold mb-4">No Races Yet</h2>
-              <p className="text-muted-foreground mb-2 max-w-sm">
-                Races occur automatically every minute when at least 2 racers are ready.
-              </p>
-              <p className="text-muted-foreground mb-8 max-w-sm">
-                Adopt some racers to start participating!
-              </p>
+              <h2 className="text-2xl font-bold mb-6">No Races Yet</h2>
+              <div className="space-y-3 mb-8 max-w-sm">
+                <p className="text-muted-foreground leading-relaxed">
+                  Races occur automatically every minute when at least 2 racers are ready.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Adopt some racers to start participating!
+                </p>
+              </div>
               <Link href="/adopt" className="btn-figma-primary">
                 <Target className="mr-2 h-5 w-5" />
                 Adopt Racers

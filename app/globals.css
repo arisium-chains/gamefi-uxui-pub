@@ -820,10 +820,78 @@ a {
   justify-content: center;
 }
 
+/* Filter Tabs - Enhanced Spacing */
+.filter-tabs-container {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.filter-tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-tab {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-tab.active {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
+.filter-tab:hover {
+  border-color: var(--primary);
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+/* Enhanced Mobile Header */
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 70px;
+  flex-shrink: 0;
+}
+
+/* Enhanced Mobile Page Layout */
+.mobile-page {
+  flex: 1;
+  padding: 1.25rem;
+  padding-bottom: 7rem; /* More space for bottom nav */
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: calc(100vh - 140px); /* Adjusted for larger header */
+  overflow-y: auto;
+}
+
 /* Responsive Design */
 @media (max-width: 480px) {
   .mobile-page {
-    padding: 0.75rem;
+    padding: 1rem;
   }
   
   .mobile-card {
@@ -836,6 +904,11 @@ a {
   
   .btn-figma-primary {
     padding: 0.875rem 1.5rem;
+  }
+  
+  .mobile-header {
+    padding: 1rem 1.25rem;
+    min-height: 65px;
   }
 }
 
